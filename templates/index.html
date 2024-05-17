@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftIsep - Liste des Cours</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}" id="titre">SoftIsep</a>
+    </header>
+    <main>
+        <h1>Liste des Cours</h1>
+        <div class="search-container">
+            <form method="get" action="" class="search-form">
+                {{ form.as_p }}
+                <button type="submit">Rechercher</button>
+            </form>
+        </div>
+
+        <div class="cours-container">
+            {% for cours in cours_list %}
+                <section class="cours">
+                    <h2>{{ cours.nom }}</h2>
+                    <p>{{ cours.description }}</p>
+                    <ul class="logiciel-list">
+                        {% for logiciel in cours.logiciels.all %}
+                            <li class="logiciel">
+                                <a href="{% url 'logiciel_view' logiciel_name=logiciel.nom %}">{{ logiciel.nom }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Tous droits réservés. Digitalys</p>
+    </footer>
+</body>
+</html>

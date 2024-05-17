@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftIsep - Détails du Logiciel</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}" id="titre">SoftIsep</a>
+    </header>
+    <main>
+        <h1>Détails du Logiciel</h1>
+        <div class="logiciel-details">
+            <h2>{{ logiciel.nom }}</h2>
+            <p>{{ logiciel.description }}</p>
+            <p>Associé à ces cours :</p>
+            <ul>
+                {% for cours in cours_associated%}
+                    <li>{{ cours.nom }}</li>
+                {% endfor %}
+            </ul>
+            <p><a href="{{ logiciel.url_telechargement }}">Configurer le logiciel</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Tous droits réservés. Digitalys</p>
+    </footer>
+</body>
+</html>
