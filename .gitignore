@@ -1,2 +1,46 @@
-softisep
-index.html
+# Fichiers et répertoires générés par Django
+*.pyc
+__pycache__
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Fichiers de configuration spécifiques à l'environnement (par ex. pour django-environ)
+.env
+
+# Fichiers de log
+logs/
+
+# Dossier d'installation Python
+venv/
+env/
+ENV/
+
+# Fichiers de dépendances Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Fichiers de sauvegarde
+*~
+
+# Fichiers de test
+*.swp
+*.swo
+*.log
+
+# Fichiers de cache
+*.cache
+
+# Fichiers de configuration de l'IDE
+.idea/
+.vscode/
+
+# Fichiers de configuration spécifiques à l'éditeur
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
+# Cache de sécurité Django
+cache/
