@@ -6,10 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftIsep - Liste des Cours</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest'%}">
+
 </head>
 <body>
     <header>
         <a href="{% url 'index' %}" id="titre">SoftIsep</a>
+        <div class="image-container">
+            <img src="{% static 'images/logo-isep.png' %}" alt="My Image" class="top-right-image">
+        </div>
     </header>
     <main>
         <h1>Liste des Cours</h1>

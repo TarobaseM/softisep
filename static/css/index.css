@@ -105,6 +105,7 @@ footer p {
     color: #ffffff;
     text-decoration: none;
 }
+
 /* Styles spécifiques à la page logiciel */
 .logiciel-details {
     background-color: #f9f9f9;
@@ -138,4 +139,18 @@ footer p {
 
 .logiciel-details a:hover {
     text-decoration: underline;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.top-right-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
 }
