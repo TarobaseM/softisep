@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+{% load auth_extras %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    {% block extra_head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% endblock %}
+
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}" id="titre">SoftIsep</a>
+        
+   
+    
+        <nav>
+            <ul>
+                
+                <!-- Autres éléments de navigation ici -->
+                {% if user.is_authenticated %}
+                <li class="header"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
+                {% else %}
+                <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
+                {% endif %}
+                {% if user.is_superuser or user.is_staff%}
+                <li class="header"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <p>© 2024 Tous droits réservés. Digitalys</p>
+    </footer>
+</body>
+</html>
+

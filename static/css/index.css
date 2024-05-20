@@ -151,6 +151,162 @@ footer p {
     position: absolute;
     top: 0;
     right: 0;
+    width: 40px; /* Adjust the size as needed */
+    height: auto;
+}
+header .auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #0056b3;
+}
+/* Pour le grand conteneur de la page */
+.container {
+    padding: 50px;
+    margin-top: 30px;
+    
+  }
+  
+  /* Pour l'en-tête de la carte */
+  .card-header {
+    background-color: #007bff;
+    text-align: center;
+  }
+  
+  .card-title {
+    color: #fff;
+  }
+  
+  /* Pour le texte du lien "Forgot Password?" */
+  .btn-link.small {
+    font-size: 14px;
+  }
+  
+  
+  /* Pour les boutons "Se connecter" et "Inscription" */
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding:0.75%;
+    display: block;
+    margin-bottom:15px;
+    margin-right: 15px;
+    border-radius: 20px; /* Bord arrondi */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    transition: 0.3s; /* Effet hover de 0.3 secondes */
+  }
+  
+  .btn-success {
+    background-color: hsla(134, 84%, 44%, 0.648);
+    color: #fff;
+    font-size:14px;
+    padding: 0.75%;
+    margin-top:15px;
+    
+    border-radius: 20px; /* Bord arrondi */
+    box-shadow: 0 3px 6px #fdf9f9db; /* Ombre */
+    transition: 0.3s; /* Effet hover de 0.3 secondes */
+    margin-left: 45px;
+  }
+  
+  .btn-primary:hover, .btn-success:hover {
+    background-color: #0056b3; /* Couleur légèrement plus foncée au survol */
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+  }
+p{
+    margin-bottom:20px;
+}
+.card-body{
+    border-radius: 15px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+    background-color: aliceblue;
+    padding: 5%;
+
+}
+#alert-info-mt-3{
+    display:flex;
+    margin-left: 90px;
+}
+ul{
+    list-style-type: none;
+}
+
+.header a{
+    text-decoration:none;
+    color:white;
+    border: 1.5px solid rgba(0, 0, 0, 0.871);
+    padding: 5px;
+    margin: 2px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    position: relative; /* Pour positionner le nav */
+}
+
+.image-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     width: 100px; /* Adjust the size as needed */
     height: auto;
 }
+
+nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+nav ul {
+    list-style: none; /* Pour enlever les puces de liste */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline; /* Pour afficher les éléments en ligne */
+    margin-right: 10px; /* Pour ajouter un espace entre les éléments */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 700px) {
+    nav {
+        position: static; /* Pour rendre le nav positionné de manière normale sur les petits écrans */
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0; /* Enlever la marge droite pour les éléments en colonne */
+        margin-bottom: 10px;}}

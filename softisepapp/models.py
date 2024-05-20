@@ -2,6 +2,7 @@ from django.db import models
 from datetime import date
 # Create your models here.
 from django.db import models
+from django.contrib.auth.models import User
 
 
 
@@ -10,6 +11,7 @@ class Cours(models.Model):
     nom = models.CharField(max_length=100)
     description = models.TextField(default="lorem ipsum")
     logiciels = models.ManyToManyField('Logiciel', related_name='cours_logiciels')
+    eleves = models.ManyToManyField(User, related_name='cours')
 
     def __str__(self):
         return self.nom

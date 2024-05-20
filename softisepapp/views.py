@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .models import Cours, Logiciel
 from .forms import SearchForm
 from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect
+
+
 
 def index(request):
     form = SearchForm(request.GET or None)
@@ -25,3 +28,16 @@ def logiciel_view(request, logiciel_name):
         'cours_associated': cours_associated,
     }
     return render(request, 'page_logiciel.html', context)
+
+
+
+
+
+
+def my_courses(request):
+    # Récupérer les cours de l'utilisateur connecté
+    if request.user.is_authenticated:
+        courses = request.user.cours.all()
+    else:
+        courses = None
+    return render(request, 'my_courses.html', {'courses': courses})

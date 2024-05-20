@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     {% load static %}
+    {% load auth_extras %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftIsep - Détails du Logiciel</title>
@@ -15,9 +16,6 @@
 <body>
     <header>
         <a href="{% url 'index' %}" id="titre">SoftIsep</a>
-        <div class="image-container">
-            <img src="{% static 'images/logo-isep.png' %}" alt="My Image" class="top-right-image">
-        </div>
     </header>
     <main>
         <h1>Détails du Logiciel</h1>
