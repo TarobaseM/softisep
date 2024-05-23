@@ -20,7 +20,7 @@
             <ul>
                 {% if user.is_authenticated %}
 
-                    <li class="header"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
+                    <li class="header-logout"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
                 {% else %}
                     <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
                 {% endif %}

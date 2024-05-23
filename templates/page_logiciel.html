@@ -16,6 +16,22 @@
 <body>
     <header>
         <a href="{% url 'index' %}" id="titre">SoftIsep</a>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+
+                    <li class="header-logout"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
+                {% else %}
+                    <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
+                {% endif %}
+                {% if user.is_superuser or  user.is_staff %}
+                    <li class="header"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
+                {% endif %}
+                {% if user|has_group:"élèves" %}
+                <li class="header"><a href="{% url 'my_courses' %}">Mes cours</a></li>
+                {% endif %}
+             </ul>
+        </nav>
     </header>
     <main>
         <h1>Détails du Logiciel</h1>

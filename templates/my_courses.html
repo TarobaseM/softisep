@@ -20,7 +20,7 @@
             <ul>
                 {% if user.is_authenticated %}
 
-                    <li class="header"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
+                    <li class="header-logout"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
                 {% else %}
                     <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
                 {% endif %}
@@ -28,10 +28,9 @@
                     <li class="header"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
                 {% endif %}
                 {% if user|has_group:"élèves" %}
-                    <li class="header"><a href="{% url 'my_courses' %}">Mes cours</a></li>
-            
+                <li class="header"><a href="{% url 'my_courses' %}">Mes cours</a></li>
                 {% endif %}
-            </ul>
+             </ul>
         </nav>
     </header>
     <main>

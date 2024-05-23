@@ -248,12 +248,12 @@ ul{
     text-decoration:none;
     color:white;
     border: 1.5px solid rgba(0, 0, 0, 0.871);
-    padding: 5px;
+    padding: px;
     margin: 2px;
+    background-color: #0dab0d;
 }
 
 header {
-    background-color: var(--primary-color);
     color: white;
     padding: 20px;
     position: relative; /* Pour positionner le nav */
@@ -295,11 +295,27 @@ nav ul li a {
 nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+.header-logout a{
+    text-decoration:none;
+    color:white;
+    border: 1.5px solid rgba(0, 0, 0, 0.871);
+    padding: 5px;
+    margin: 2px;
+}
+
+.header-logout {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    position: relative; /* Pour positionner le nav */
+}
+
 @media (max-width: 700px) {
     nav {
         position: static; /* Pour rendre le nav positionné de manière normale sur les petits écrans */
         text-align: center;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     nav ul {
