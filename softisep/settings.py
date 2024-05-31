@@ -137,3 +137,13 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_COOKIE_DOMAIN = 'softisep-6j3pjfor2q-nw.a.run.app'
+CSRF_COOKIE_PATH = '/'
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
+CSRF_TRUSTED_ORIGINS = ['https://softisep-6j3pjfor2q-nw.a.run.app']
