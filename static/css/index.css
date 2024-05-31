@@ -12,6 +12,7 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    margin-top:30px;
 }
 
 header, footer {
@@ -250,13 +251,23 @@ ul{
     border: 1.5px solid rgba(0, 0, 0, 0.871);
     padding: px;
     margin: 2px;
-    background-color: #0dab0d;
+    background-color:#4CAF50;
 }
-
+.header-right a{
+    text-decoration:none;
+    color:white;
+    border: 1.5px solid rgba(0, 0, 0, 0.871);
+    background-color:hsl(180, 3%, 33%);
+    
+   
+}
 header {
     color: white;
     padding: 20px;
     position: relative; /* Pour positionner le nav */
+}
+form{
+    margin-bottom: 35px;
 }
 
 .image-container {
@@ -302,6 +313,7 @@ nav ul li a:hover {
     border: 1.5px solid rgba(0, 0, 0, 0.871);
     padding: 5px;
     margin: 2px;
+    background-color: hsl(0, 98%, 49%);
 }
 
 .header-logout {
@@ -310,6 +322,44 @@ nav ul li a:hover {
     padding: 20px;
     position: relative; /* Pour positionner le nav */
 }
+
+ul.admin-teacher-box {
+    padding: 0;
+    margin: 20px 0;
+    list-style-type: none;
+    display: flex;
+   
+    width:70%;
+
+
+}
+
+
+
+.header {
+    margin: 10px;
+    margin-bottom: 30px;
+    
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+   
+   
+   
+}
+
+.button:hover {
+
+    background-color: #0056b3;
+}
+
 
 @media (max-width: 700px) {
     nav {
@@ -325,4 +375,17 @@ nav ul li a:hover {
 
     nav ul li {
         margin-right: 0; /* Enlever la marge droite pour les éléments en colonne */
-        margin-bottom: 10px;}}
+        margin-bottom: 10px;}
+        ul.admin-teacher-box {
+            flex-direction: column;
+        }
+    
+        .header {
+            width: 100%;
+            margin: 5px 0;
+            margin-bottom: 30px;
+        }
+
+    }
+    
+    

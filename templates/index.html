@@ -24,16 +24,27 @@
                 {% else %}
                     <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
                 {% endif %}
-                {% if user.is_superuser or  user.is_staff %}
-                    <li class="header"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
-                {% endif %}
                 {% if user|has_group:"élèves" %}
                 <li class="header"><a href="{% url 'my_courses' %}">Mes cours</a></li>
                 {% endif %}
+                {% if user.is_superuser or  user.is_staff %}
+                    <li class="header-right"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
+                {% endif %}
+                
              </ul>
         </nav>
     </header>
     <main>
+        {% if user|has_group:"Professeurs" %}
+        <ul class="admin-teacher-box">
+        <li class="header">
+            <a href="{% url 'admin:softisepapp_cours_add' %}" class="button">Ajouter un Cours</a>
+        </li>
+        <li class="header">
+            <a href="{% url 'admin:softisepapp_logiciel_add' %}" class="button">Ajouter un Logiciel</a>
+        </li>
+        </ul>
+        {% endif %}
     
         <h1>Liste des Cours</h1>
         <div class="search-container">

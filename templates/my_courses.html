@@ -24,16 +24,17 @@
                 {% else %}
                     <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
                 {% endif %}
-                {% if user.is_superuser or  user.is_staff %}
-                    <li class="header"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
-                {% endif %}
                 {% if user|has_group:"élèves" %}
                 <li class="header"><a href="{% url 'my_courses' %}">Mes cours</a></li>
+                {% endif %}
+                {% if user.is_superuser or  user.is_staff %}
+                    <li class="header-right"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
                 {% endif %}
              </ul>
         </nav>
     </header>
     <main>
+        
         <h1>My Courses</h1>
         {% if courses %}
         <div class="cours-container">
