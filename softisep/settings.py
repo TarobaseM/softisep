@@ -148,5 +148,9 @@ CSRF_TRUSTED_ORIGINS = ['https://softisep-6j3pjfor2q-nw.a.run.app']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Utiliser la base de données pour stocker les sessions
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_AGE = 1209600  # Deux semaines
+SESSION_COOKIE_SECURE = True  # True pour HTTPS
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'
