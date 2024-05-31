@@ -142,9 +142,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CSRF_COOKIE_NAME = 'csrftoken'
 CSRF_COOKIE_DOMAIN = 'softisep-6j3pjfor2q-nw.a.run.app'
 CSRF_COOKIE_PATH = '/'
-CSRF_COOKIE_SECURE = True
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
 CSRF_TRUSTED_ORIGINS = ['https://softisep-6j3pjfor2q-nw.a.run.app']
-CSRF_COOKIE_AGE = 31449600  # 1 an
-SESSION_COOKIE_AGE = 1209600  # 2 semaines
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Utiliser la base de données pour stocker les sessions
+
