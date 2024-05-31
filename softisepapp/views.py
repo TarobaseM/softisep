@@ -40,4 +40,5 @@ def my_courses(request):
         courses = request.user.cours.all()
     else:
         courses = None
+        redirect(index)
     return render(request, 'my_courses.html', {'courses': courses})
