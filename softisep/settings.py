@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ub#l5ufo5w&%8aoegc%z#x(vmo55=or*7vl^q&xu$voo!0)oi@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['softisep-6j3pjfor2q-nw.a.run.app','localhost']
 
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',   
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'softisep.urls'
@@ -139,16 +139,13 @@ LOGIN_REDIRECT_URL = '/'
 
 
 
-CSRF_COOKIE_SECURE = True  # Assurez-vous que ce paramètre est True si vous utilisez HTTPS
-CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_NAME = 'csrftoken'
 CSRF_COOKIE_DOMAIN = 'softisep-6j3pjfor2q-nw.a.run.app'
 CSRF_COOKIE_PATH = '/'
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
 CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
 CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
 CSRF_TRUSTED_ORIGINS = ['https://softisep-6j3pjfor2q-nw.a.run.app']
 
 ACCOUNT_SESSION_REMEMBER = True
-
-
-
