@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ub#l5ufo5w&%8aoegc%z#x(vmo55=or*7vl^q&xu$voo!0)oi@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['softisep-6j3pjfor2q-nw.a.run.app','localhost']
 
 
 # Application definition
@@ -136,17 +136,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 
 CSRF_COOKIE_SECURE = True  # Assurez-vous que ce paramètre est True si vous utilisez HTTPS
 CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_NAME = 'csrftoken'
 CSRF_COOKIE_DOMAIN = 'softisep-6j3pjfor2q-nw.a.run.app'
+CSRF_COOKIE_PATH = '/'
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
 CSRF_TRUSTED_ORIGINS = ['https://softisep-6j3pjfor2q-nw.a.run.app']
 
+ACCOUNT_SESSION_REMEMBER = True
 
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Utiliser la base de données pour stocker les sessions
-SESSION_COOKIE_SECURE = True  # Assurez-vous que ce paramètre est True si vous utilisez HTTPS
-SESSION_COOKIE_HTTPONLY = True
+
