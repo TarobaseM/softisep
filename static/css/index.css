@@ -1,3 +1,4 @@
+/* Définition des variables */
 :root {
     --background-color: #f4f4f9;
     --primary-color: #003366;
@@ -6,15 +7,17 @@
     --footer-text-size: 0.8em;
 }
 
+/* Styles globaux */
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    margin-top:30px;
+    margin-top:30px; /* Assure une marge en haut pour l'en-tête */
 }
 
+/* En-tête et pied de page */
 header, footer {
     background-color: var(--primary-color);
     color: white;
@@ -22,14 +25,28 @@ header, footer {
     padding: 20px;
 }
 
+/* Contenu principal */
 main {
     padding: 20px;
 }
 
+/* Styles pour les titres */
 h1, h2, h3 {
     color: var(--link-color);
+    margin-bottom: 20px; /* Ajoute un espace après chaque titre */
 }
 
+/* Styles pour les liens */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour les formulaires de recherche */
 .search-container {
     margin-bottom: 20px;
 }
@@ -60,6 +77,7 @@ h1, h2, h3 {
     background-color: #45a049;
 }
 
+/* Styles pour la liste de cours */
 .cours-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -86,306 +104,16 @@ section.cours {
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
-.logiciel a {
-    color: var(--link-color);
-    text-decoration: none;
-}
-
-.logiciel a:hover {
-    text-decoration: underline;
-}
-
+/* Styles pour le pied de page */
 footer p {
     margin: 0;
     font-size: var(--footer-text-size);
 }
 
+/* Titre principal */
 #titre {
     font-size: 24px;
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
 }
-
-/* Styles spécifiques à la page logiciel */
-.logiciel-details {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.logiciel-details h2 {
-    color: #333;
-}
-
-.logiciel-details p {
-    color: #666;
-}
-
-.logiciel-details ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.logiciel-details ul li {
-    margin-bottom: 10px;
-}
-
-.logiciel-details a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.logiciel-details a:hover {
-    text-decoration: underline;
-}
-
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.top-right-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px; /* Adjust the size as needed */
-    height: auto;
-}
-header .auth-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.auth-buttons .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.auth-buttons .btn:hover {
-    background-color: #0056b3;
-}
-/* Pour le grand conteneur de la page */
-.container {
-    padding: 50px;
-    margin-top: 30px;
-    
-  }
-  
-  /* Pour l'en-tête de la carte */
-  .card-header {
-    background-color: #007bff;
-    text-align: center;
-  }
-  
-  .card-title {
-    color: #fff;
-  }
-  
-  /* Pour le texte du lien "Forgot Password?" */
-  .btn-link.small {
-    font-size: 14px;
-  }
-  
-  
-  /* Pour les boutons "Se connecter" et "Inscription" */
-  .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    padding:0.75%;
-    display: block;
-    margin-bottom:15px;
-    margin-right: 15px;
-    border-radius: 20px; /* Bord arrondi */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Ombre */
-    transition: 0.3s; /* Effet hover de 0.3 secondes */
-  }
-  
-  .btn-success {
-    background-color: hsla(134, 84%, 44%, 0.648);
-    color: #fff;
-    font-size:14px;
-    padding: 0.75%;
-    margin-top:15px;
-    
-    border-radius: 20px; /* Bord arrondi */
-    box-shadow: 0 3px 6px #fdf9f9db; /* Ombre */
-    transition: 0.3s; /* Effet hover de 0.3 secondes */
-    margin-left: 45px;
-  }
-  
-  .btn-primary:hover, .btn-success:hover {
-    background-color: #0056b3; /* Couleur légèrement plus foncée au survol */
-    transform: scale(1.05); /* Effet d'agrandissement au survol */
-  }
-p{
-    margin-bottom:20px;
-}
-.card-body{
-    border-radius: 15px;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1); /* Ombre */
-    background-color: aliceblue;
-    padding: 5%;
-
-}
-#alert-info-mt-3{
-    display:flex;
-    margin-left: 90px;
-}
-ul{
-    list-style-type: none;
-}
-
-.header a{
-    text-decoration:none;
-    color:white;
-    border: 1.5px solid rgba(0, 0, 0, 0.871);
-    padding: px;
-    margin: 2px;
-    background-color:#4CAF50;
-}
-.header-right a{
-    text-decoration:none;
-    color:white;
-    border: 1.5px solid rgba(0, 0, 0, 0.871);
-    background-color:hsl(180, 3%, 33%);
-    
-   
-}
-header {
-    color: white;
-    padding: 20px;
-    position: relative; /* Pour positionner le nav */
-}
-form{
-    margin-bottom: 35px;
-}
-
-.image-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 100px; /* Adjust the size as needed */
-    height: auto;
-}
-
-nav {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-nav ul {
-    list-style: none; /* Pour enlever les puces de liste */
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline; /* Pour afficher les éléments en ligne */
-    margin-right: 10px; /* Pour ajouter un espace entre les éléments */
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.header-logout a{
-    text-decoration:none;
-    color:white;
-    border: 1.5px solid rgba(0, 0, 0, 0.871);
-    padding: 5px;
-    margin: 2px;
-    background-color: hsl(0, 98%, 49%);
-}
-
-.header-logout {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 20px;
-    position: relative; /* Pour positionner le nav */
-}
-
-ul.admin-teacher-box {
-    padding: 0;
-    margin: 20px 0;
-    list-style-type: none;
-    display: flex;
-   
-    width:70%;
-
-
-}
-
-
-
-.header {
-    margin: 10px;
-    margin-bottom: 30px;
-    
-}
-
-.button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-   
-   
-   
-}
-
-.button:hover {
-
-    background-color: #0056b3;
-}
-
-
-@media (max-width: 700px) {
-    nav {
-        position: static; /* Pour rendre le nav positionné de manière normale sur les petits écrans */
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin-right: 0; /* Enlever la marge droite pour les éléments en colonne */
-        margin-bottom: 10px;}
-        ul.admin-teacher-box {
-            flex-direction: column;
-        }
-    
-        .header {
-            width: 100%;
-            margin: 5px 0;
-            margin-bottom: 30px;
-        }
-
-    }
-    
-    

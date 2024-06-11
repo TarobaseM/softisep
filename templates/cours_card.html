@@ -1,0 +1,11 @@
+<section class="cours">
+    <h2>{{ cours.nom }}</h2>
+    <p>{{ cours.description }}</p>
+    <ul class="logiciel-list">
+        {% for logiciel in cours.logiciels.all %}
+            <li class="logiciel">
+                <a href="{% url 'logiciel_view' logiciel_name=logiciel.nom %}">{{ logiciel.nom }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

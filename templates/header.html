@@ -1,0 +1,22 @@
+<header>
+    {% load auth_extras %}
+    <a href="{% url 'index' %}" id="titre">SoftIsep</a>
+    <nav>
+        <ul>
+            <!-- Gestion de l'authentification -->
+            {% if user.is_authenticated %}
+                <li class="header-logout"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
+            {% else %}
+                <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
+            {% endif %}
+            <!-- Lien vers les cours de l'utilisateur -->
+            {% if user|has_group:"élèves" %}
+                <li class="header"><a href="{% url 'my_courses' %}">Mes cours</a></li>
+            {% endif %}
+            <!-- Lien vers la page d'administration pour les super utilisateurs et le personnel -->
+            {% if user.is_superuser or  user.is_staff %}
+                <li class="header-right"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>

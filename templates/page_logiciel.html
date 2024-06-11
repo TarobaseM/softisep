@@ -7,52 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftIsep - Détails du Logiciel</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png'%}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-16x16.png'%}">
-    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest'%}">
-
+    <!-- Ajoutez ici d'autres balises meta ou de lien si nécessaire -->
 </head>
 <body>
-    <header>
-        <a href="{% url 'index' %}" id="titre">SoftIsep</a>
-        <nav>
-            <ul>
-                {% if user.is_authenticated %}
+    <!-- Entête -->
+    {% include 'header.html' %}
 
-                    <li class="header-logout"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
-                {% else %}
-                    <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
-                {% endif %}
-                {% if user|has_group:"élèves" %}
-                <li class="header"><a href="{% url 'my_courses' %}">Mes cours</a></li>
-                {% endif %}
-                {% if user.is_superuser or  user.is_staff %}
-                    <li class="header-right"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
-                {% endif %}
-                
-             </ul>
-        </nav>
-    </header>
     <main>
         <h1>Détails du Logiciel</h1>
+        
+        <!-- Affichage des détails du logiciel -->
         <div class="logiciel-details">
             <h2>{{ logiciel.nom }}</h2>
             <p>{{ logiciel.description }}</p>
             <p><strong>Version :</strong> {{ logiciel.version }}</p>
             <p><strong>Date de sortie :</strong> {{ logiciel.date_de_sortie }}</p>
             <p><strong>Système d'exploitation :</strong> {{ logiciel.systeme_exploitation }}</p>
+            
+            <!-- Affichage des cours associés au logiciel -->
             <p>Associé à ces cours :</p>
             <ul>
                 {% for cours in cours_associated %}
                     <li>{{ cours.nom }}</li>
                 {% endfor %}
             </ul>
+            
+            <!-- Lien de téléchargement -->
             <p><a href="{{ logiciel.url_telechargement }}">Configurer le logiciel</a></p>
         </div>
     </main>
-    <footer>
-        <p>© 2024 Tous droits réservés. Digitalys</p>
-    </footer>
+
+    <!-- Pied de page -->
+    {% include 'footer.html' %}
 </body>
 </html>

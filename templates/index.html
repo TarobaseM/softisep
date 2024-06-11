@@ -7,73 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftIsep - Liste des Cours</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png'%}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-16x16.png'%}">
-    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest'%}">
-
+    <!-- Ajoutez ici d'autres balises meta ou de lien si nécessaire -->
 </head>
 <body>
-    <header>
-        <a href="{% url 'index' %}" id="titre">SoftIsep</a>
-        <nav>
-            <ul>
-                {% if user.is_authenticated %}
+    <!-- Entête -->
+    {% include 'header.html' %}
 
-                    <li class="header-logout"><a href="{% url 'account_logout' %}">Déconnexion</a></li>
-                {% else %}
-                    <li class="header"><a href="{% url 'account_login' %}">Connexion</a></li>
-                {% endif %}
-                {% if user|has_group:"élèves" %}
-                <li class="header"><a href="{% url 'my_courses' %}">Mes cours</a></li>
-                {% endif %}
-                {% if user.is_superuser or  user.is_staff %}
-                    <li class="header-right"><a href="{% url 'admin:index' %}">Page d'Admin</a></li>
-                {% endif %}
-                
-             </ul>
-        </nav>
-    </header>
     <main>
+        <!-- Gestion des privilèges pour les professeurs -->
         {% if user|has_group:"Professeurs" %}
-        <ul class="admin-teacher-box">
-        <li class="header">
-            <a href="{% url 'admin:softisepapp_cours_add' %}" class="button">Ajouter un Cours</a>
-        </li>
-        <li class="header">
-            <a href="{% url 'admin:softisepapp_logiciel_add' %}" class="button">Ajouter un Logiciel</a>
-        </li>
-        </ul>
+            {% include 'admin_buttons.html' %}
         {% endif %}
     
         <h1>Liste des Cours</h1>
+        
+        <!-- Formulaire de recherche -->
         <div class="search-container">
-            <form method="get" action="" class="search-form">
-                {% csrf_token %}
-                {{ form.as_p }}
-                
-                <button type="submit">Rechercher</button>
-            </form>
+            {% include 'search_form.html' %}
         </div>
 
+        <!-- Affichage des cours -->
         <div class="cours-container">
             {% for cours in cours_list reversed %}
-                <section class="cours">
-                    <h2>{{ cours.nom }}</h2>
-                    <p>{{ cours.description }}</p>
-                    <ul class="logiciel-list">
-                        {% for logiciel in cours.logiciels.all %}
-                            <li class="logiciel">
-                                <a href="{% url 'logiciel_view' logiciel_name=logiciel.nom %}">{{ logiciel.nom }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </section>
+                {% include 'cours_card.html' %}
             {% endfor %}
         </div>
     </main>
-    <footer>
-        <p>© 2024 Tous droits réservés. Digitalys</p>
-    </footer>
+
+    <!-- Pied de page -->
+    {% include 'footer.html' %}
 </body>
 </html>

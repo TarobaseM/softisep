@@ -11,7 +11,7 @@ class Command(BaseCommand):
         group2, _ = Group.objects.get_or_create(name='élèves')
 
         # Créer des utilisateurs aléatoires
-        for i in range(51,101):
+        for i in range(0,101):
             username = f'user{i}'
             email = f'user{i}@example.com'
             password = 'password123'
